@@ -1,2 +1,5 @@
+# Everything here is ordinary text unless noted.
 * text=auto eol=lf
+
+# Screenshots are pixel evidence: never re-encode or line-ending them.
 *.png binary
