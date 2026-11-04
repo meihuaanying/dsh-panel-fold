@@ -88,7 +88,12 @@ ui-sidebar does have a "pin / unpin panel" mechanism (`setPinned`), and unpinnin
 
 ## Related work
 
-- [`LoktLin/dsh-sidebar-tidy`](https://github.com/LoktLin/dsh-sidebar-tidy) — a different, much broader take: it hides the brand row, the new-session button, the panel block *and* the footer settings behind one "exit minimal mode" button, and adds workspace colour blocks. If you want the whole sidebar stripped down, use that. `dsh-panel-fold` deliberately touches only the panel launchers, keeps the new-session button and the footer where they are, and is named differently so the two can be reasoned about (and installed) independently.
+Two other plugins touch the same block. Both are stable, MIT, and worth a look if you want more than a fold:
+
+- [`ACGsu/dsh-sidebar-panel-fold`](https://github.com/ACGsu/dsh-sidebar-panel-fold) — **the closest neighbour.** It adds its own "collapse panels" row above the list; collapsing turns the whole block into a single summary row (active panel icon + name) that opens a popover listing every panel, and the state persists through DSH's host settings channel rather than `localStorage`. If you would rather have a dedicated summary row with the active panel's name on it, use that one.
+- [`LoktLin/dsh-sidebar-tidy`](https://github.com/LoktLin/dsh-sidebar-tidy) — a much broader take: it hides the brand row, the new-session button, the panel block *and* the footer settings behind one "exit minimal mode" button, and adds workspace colour blocks. If you want the whole sidebar stripped down, use that.
+
+`dsh-panel-fold` deliberately takes the smallest possible slice: it adds **no new row** — it reuses the More button ui-sidebar already renders at the bottom of the block — it changes nothing else in the sidebar, and it keeps the client half under 7 KB with no host-side code at all.
 
 ## License
 
@@ -163,7 +168,12 @@ ui-sidebar 确实有「固定 / 取消固定面板」机制（`setPinned`），�
 
 ### 与类似项目的关系
 
-[`LoktLin/dsh-sidebar-tidy`](https://github.com/LoktLin/dsh-sidebar-tidy) 是一个更激进的方案：把品牌行、新会话按钮、面板块、底部设置全部收进一个「退出极简」按钮，还给工作区加彩色缩写块。你要的是「整个侧栏极简」，用那个。`dsh-panel-fold` 只动面板入口这一块，新会话按钮和底部设置原地不动，并且刻意用了不同的包名，让两者可以独立评估、独立安装。
+还有两个插件动的是同一块，都是 MIT、都在维护，想多要一点就看它们：
+
+- [`ACGsu/dsh-sidebar-panel-fold`](https://github.com/ACGsu/dsh-sidebar-panel-fold) —— **最接近的一个。** 它在面板列表上方**自己加一行**「收起面板」；收起后整块变成一行摘要（当前面板图标 + 名字），点这一行弹浮层列出全部面板；状态存在 DSH 的 Host 设置通道里而不是 `localStorage`。你想要「一行摘要 + 当前面板名」那种形态，用那个。
+- [`LoktLin/dsh-sidebar-tidy`](https://github.com/LoktLin/dsh-sidebar-tidy) —— 更激进：把品牌行、新会话按钮、面板块、底部设置全部收进一个「退出极简」按钮，还给工作区加彩色缩写块。你要的是「整个侧栏极简」，用那个。
+
+`dsh-panel-fold` 刻意只切最小的那一块：**不新增任何一行**（复用 ui-sidebar 本来就在块底渲染的『更多』按钮），侧栏其它地方一律不动，客户端半边不到 7 KB、完全没有 Host 侧代码。
 
 ### 许可
 
