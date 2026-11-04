@@ -1,0 +1,42 @@
+{
+  "name": "dsh-panel-fold",
+  "version": "0.1.0",
+  "description": "Fold the DSH sidebar's global panel icons into the More menu, giving the workspace and session list its vertical space back. One-line toggle, instantly reversible. 把侧边栏那排『全局面板』图标收进『更多』，给工作区列表腾出空间。",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "docs"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "sidebar",
+    "panellist",
+    "ui"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/manifest.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}
