@@ -19,11 +19,32 @@
   "keywords": [
     "dsh",
     "dsh-plugin",
+    "deepseek-harness",
     "sidebar",
     "panellist",
     "ui"
   ],
   "license": "MIT",
+  "author": "meihuaanying",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meihuaanying/dsh-panel-fold.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meihuaanying/dsh-panel-fold/issues"
+  },
+  "homepage": "https://github.com/meihuaanying/dsh-panel-fold#readme",
+  "engines": {
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
   "scripts": {
     "test": "node test/manifest.test.mjs"
   },

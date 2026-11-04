@@ -16,6 +16,8 @@ This plugin folds those rows into the single **More** button that already sits a
 
 Both screenshots are of the same window with the same plugins enabled — the only difference is the fold.
 
+> Verified on DSH `0.2.1-rc.2` (desktop profile, Windows). The fold survives `Ctrl+R`, and folded-vs-expanded round-trips in place without a reload.
+
 ## What you get
 
 - **One row instead of eight.** The panel block collapses to `⋯ More`. The workspace list directly below gains roughly `7 × 36px` of height.
@@ -28,17 +30,21 @@ Both screenshots are of the same window with the same plugins enabled — the on
 
 ## Install
 
+Not on npm yet — install straight from GitHub:
+
 ```sh
-dsh plugin --profile <your-profile> add dsh-panel-fold
+dsh plugin --profile <your-profile> add github:meihuaanying/dsh-panel-fold
 ```
 
-Or install from a local checkout:
+Or from a local checkout:
 
 ```sh
 dsh plugin --profile <your-profile> add /path/to/dsh-panel-fold
 ```
 
 Then reload the web client. The fold applies immediately; the toggle appears under the sidebar's More menu.
+
+> Already installed an older copy under a different name? Remove it first (`dsh plugin --profile <p> remove <old-name>`) so the profile does not keep a dangling link to a renamed folder.
 
 ## How it works
 
@@ -108,8 +114,10 @@ DSH 左侧栏顶部有一块固定的「全局面板」入口区 —— 插件�
 
 ### 安装
 
+还没上 npm，直接从 GitHub 装：
+
 ```sh
-dsh plugin --profile <你的 profile> add dsh-panel-fold
+dsh plugin --profile <你的 profile> add github:meihuaanying/dsh-panel-fold
 ```
 
 本地目录安装：
@@ -119,6 +127,8 @@ dsh plugin --profile <你的 profile> add /path/to/dsh-panel-fold
 ```
 
 然后刷新 web 客户端。折叠立即生效，开关在侧栏『更多』菜单里。
+
+> 之前装过改名前的老版本？先 `dsh plugin --profile <p> remove <旧包名>`，否则 profile 会留下指向已改名目录的断链。
 
 ### 实现方式
 
